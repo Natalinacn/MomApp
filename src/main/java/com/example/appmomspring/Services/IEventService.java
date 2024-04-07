@@ -1,15 +1,18 @@
 package com.example.appmomspring.Services;
 
+import com.example.appmomspring.Dto.Request.EventRequestDTO;
+import com.example.appmomspring.Dto.Response.EventResponseDTO;
 import com.example.appmomspring.Models.Event;
 
 import java.util.List;
 
-public interface EventService {
+public interface IEventService {
 
     //Create event
-    public void createEvent(Event event);
+    void createEvent(EventRequestDTO eventRequestDTO);
+
     //Find events
-    public List<Event> findEvents();
+    public List<EventResponseDTO> findEvents();
 
     //Find event by id
     public Event findEventById(Integer eventId);

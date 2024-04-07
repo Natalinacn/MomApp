@@ -1,8 +1,10 @@
 package com.example.appmomspring.Models;
 
+import jakarta.persistence.MappedSuperclass;
+
 import java.time.LocalDate;
 
-
+@MappedSuperclass
 public abstract class BaseEntity {
 
     private LocalDate createdAt;

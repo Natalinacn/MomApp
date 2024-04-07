@@ -26,6 +26,7 @@ public class Event extends BaseEntity{
 
 
     public Event() {
+        super();
     }
 
     public String getTitle() {
