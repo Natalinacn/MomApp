@@ -15,7 +15,7 @@ public interface IEventService {
     public List<EventResponseDTO> findEvents();
 
     //Find event by id
-    public Event findEventById(Integer eventId);
+    public EventResponseDTO findEventById(Integer eventId);
 
     //Update event
     public void updateEvent(Integer eventId, Event updatedEvent);

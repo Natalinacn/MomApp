@@ -52,10 +52,13 @@ public class EventServiceImpl implements IEventService {
     }
 
     @Override
-    public Event findEventById(Integer eventId) {
+    public EventResponseDTO findEventById(Integer eventId) {
         if (eventId != null && eventId > 0) {
             Event foundEvent = eventRepository.findById(eventId).orElseThrow(() -> new NotFoundException(eventId)); //Obtiene el valor encapsulado o lanza la excepción
-            return foundEvent;
+
+            // Mapear el objeto Event a un EventResponseDTO usando ModelMapper
+            EventResponseDTO eventResponseDTO = modelMapper.map(foundEvent, EventResponseDTO.class);
+            return eventResponseDTO;
         } else {
             throw new IllegalArgumentException("El ID del evento proporcionado no es válido: " + eventId);
         }
